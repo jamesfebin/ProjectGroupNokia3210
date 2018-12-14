@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'memotionProductionKey'
+            keyPassword 'MeMotionUsiLab1853'
+            storeFile file('/Users/usi/.android/debug.keystore')
+            storePassword 'android'
+        }
+    }
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "usi.Nokia3210"
+        minSdkVersion 23
+        targetSdkVersion 26
+        versionCode 15
+        versionName "15.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            debuggable false
+        }
+        debug {
+        }
+    }
+    packagingOptions {
+        pickFirst 'META-INF/LICENSE.txt'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'com.android.support:appcompat-v7:24.2.1'
+    testImplementation 'junit:junit:4.12'
+    implementation 'net.danlew:android.joda:2.9.5'
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'com.android.support:design:24.2.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.1'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
+    implementation 'com.android.support:recyclerview-v7:24.2.0'
+    implementation 'com.android.support:cardview-v7:24.2.1'
+    implementation 'com.bignerdranch.android:expandablerecyclerview:3.0.0-RC1'
+    implementation 'com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.10.3@aar'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.shawnlin:number-picker:2.4.2'
+    implementation 'com.roughike:swipe-selector:1.0.6'
+    implementation 'com.stepstone.stepper:material-stepper:2.2.0'
+    implementation 'org.adw.library:discrete-seekbar:1.0.1'
+    implementation files('libs/activation.jar')
+    implementation 'com.github.aakira:expandable-layout:1.4.2@aar'
+    implementation 'com.android.support:gridlayout-v7:25.2.0'
+    implementation 'com.google.android.gms:play-services-location:12.0.0'
+//    implementation files('libs/mpandroidchartlibrary-2-1-0.jar')
+}

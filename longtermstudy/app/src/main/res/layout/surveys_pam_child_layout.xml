@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/pamSurveyLayout">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <usi.Nokia3210.UI.fragments.PamSurveyView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pamSurveyView"
+            android:minHeight="450dp"/>
+    </ScrollView>
+</LinearLayout>

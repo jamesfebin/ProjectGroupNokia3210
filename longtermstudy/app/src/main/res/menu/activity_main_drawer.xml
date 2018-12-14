@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_ediary"
+            android:icon="@drawable/diary"
+            android:title="@string/menu_ediary"/>
+
+        <item
+            android:id="@+id/nav_lecture_surveys"
+            android:icon="@drawable/mood"
+            android:title="Lecture Surveys" />
+
+        <item
+            android:id="@+id/nav_screen_time"
+            android:icon="@drawable/surveys"
+            android:title="Screen Time" />
+
+        <!--<item-->
+            <!--android:id="@+id/nav_usage_statistics"-->
+            <!--android:icon="@drawable/surveys"-->
+            <!--android:title="Application Logs" />-->
+
+    </group>
+
+    <item android:title="@string/menu_information">
+        <menu>
+            <item
+                android:id="@+id/nav_register"
+                android:icon="@drawable/account"
+                android:title="@string/menu_account" />
+            <item
+                android:id="@+id/nav_about_study"
+                android:icon="@drawable/info"
+                android:title="@string/menu_about_study" />
+
+            <item
+                android:id="@+id/nav_about_app"
+                android:icon="@drawable/info"
+                android:title="@string/menu_about_app" />
+
+            <item
+                android:id="@+id/nav_upload"
+                android:icon="@drawable/upload"
+                android:title="@string/menu_upload" />
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,116 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_agreement_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Research Study: Unobtrusive Inference of User’s Well-being Using Smartphone and Wearable Devices "
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:paddingBottom="30dp"/>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:paddingBottom="30dp"/>
+
+
+        <TextView
+            android:id="@+id/textview112"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What is the purpose of this research study?"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview113"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The purpose of this study is to assess the user’s well-being over time and the factors that may influence it (such as stress, productivity, mood and more), using smartphones and wearable devices. "/>
+
+        <TextView
+            android:id="@+id/textview114"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What will you do in the study?"
+            android:textStyle="bold"
+            android:layout_marginTop="26dp" />
+
+        <TextView
+            android:id="@+id/textview115"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You will install the Android application MEMOTION and wear the E4 wristband by Empatica. The E4 device will collect data about your blood pressure, galvanic skin response and skin temperature. This sensor data can be used as an objective basis to understand your affective state. The application will unobtrusively gather some sensor’s data (e.g: location, activity recognition, app usage, phone events, notification, SMS and phone calls). This sensor data can be used as an objective basis to understand your behavior.  You will be asked to fill-in short questionnaires three times per day. Your answers can be used to get information about your subjective perception of your well-being and to understand which are the main factors that may contribute to it (such as stress, productivity and mood). You can refrain from answering any question you might prefer not to answer (e.g., because it makes you uncomfortable) and you can stop the survey at any time. Your data will be anonymized and safely stored in the academic cloud storage service SWITCHdrive0F . We will give you access to your data and you can decide to delete it at any time."/>
+
+        <TextView
+            android:id="@+id/textview116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How long does it last?"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:id="@+id/textview117"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The study will require few minutes of your daily time for 4 weeks. " />
+
+        <TextView
+            android:id="@+id/textview118"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="Is my data going to be confidential?"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textview119"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The information and data collected in this study will be stored safely and handled confidentially. Your data will be anonymized through the assignment of an alphanumerical code and your name will never be mentioned in connection to the data or in any report. Any attempt to deduce your identity from the data is explicitly forbidden by our data analysis policy." />
+
+        <TextView
+            android:id="@+id/textview120"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="Can I skip the study?"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview121"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your participation in the study is completely voluntary. You have the right to withdraw from the study at any time without penalty and to require your data to be entirely and permanently deleted."/>
+
+        <TextView
+            android:id="@+id/textview122"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact person if you have questions about the study:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview123"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shkurta Gashi: shkurta.gashi@usi.ch, Elena Di Lascio: elena.di.lascio@usi.ch, Silvia Santini: silvia.santini@usi.ch" />
+
+    </LinearLayout>
+</ScrollView>
