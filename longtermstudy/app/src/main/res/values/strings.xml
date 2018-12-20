@@ -625,4 +625,10 @@
         <item>Today</item>
         <item>Yesterday</item>
     </string-array>
+
+
+
+    <!-- ++++++++++++++++++++++++++++Screen time frag+++++++++++++++++++++++++ -->
+    <string name="appUsageStats">Application Usage Statistics</string>
 </resources>
+
