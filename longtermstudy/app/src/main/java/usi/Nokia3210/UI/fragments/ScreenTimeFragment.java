@@ -89,7 +89,6 @@ public class ScreenTimeFragment extends Fragment {
 
         pieChart = root.findViewById(R.id.pieChartView);
 
-
         addDataSet();
 
         return root;
@@ -97,62 +96,32 @@ public class ScreenTimeFragment extends Fragment {
 
     private void addDataSet(){
 
-
-
-        //List<PieEntry> entries = new ArrayList<>();
-        List<String> labels = new ArrayList<>();
         List<UsageStats> stats =getUsageStatistics(UsageStatsManager.INTERVAL_DAILY);
-
-        // sort stats for TotalTimeInForeground (biggest to smallest)
-//        stats.sort(Comparator.naturalOrder());
 
         ArrayList<PieEntry> entries = new ArrayList<>();
 
-        int count=10;
-
         for (int i=0;i<stats.size();i++)
         {
-            // stai facendo una sola entri devi fare la entri n volte tante quante le app che usi
-            // serve indicie nel for
-            //float hstats =  (stats.get(i).getTotalTimeInForeground()/3600000);
-
+            // get the total time in foreground in minutes (long) and app name (string) for apps that have been in the foreground >10 min
             if (getDurationBreakdown(stats.get(i).getTotalTimeInForeground())>10) {
 
               entries.add(new PieEntry(getDurationBreakdown(stats.get(i).getTotalTimeInForeground()), getApplicationName(getContext(),stats.get(i).getPackageName())));
-//                entries.add(new PieEntry(stats.get(i).getTotalTimeInForeground(), stats.get(i).getPackageName()));
-                    // to get name only
-//                    String[] appname = stats.get(i).getPackageName().split(".");
-//                    entries.add(new PieEntry(stats.get(i).getTotalTimeInForeground(), appname[appname.length - 1]));
-
             }
-
-          //  Log.d("ScreenFrag", s.getPackageName());
         }
-
-
-
 
         // create data set
         PieDataSet dataset = new PieDataSet(entries, "Applications usage");
         dataset.setSliceSpace(3);
         dataset.setSelectionShift(5);
         dataset.setValueTextSize(15);
-       // dataset.setValueFormatter(new PercentFormatter());
+
         // add colors
-        // ArrayList<Integer>colors= new ArrayList<>();
         dataset.setColors(ColorTemplate.COLORFUL_COLORS);
 
-
-        // add legend to chart -> does that need to be in xml? is xml complete?
-        //Legend l = pieChart.getLegend();
-        
-        //l.setPosition(LegendPosition.BELOW_CHART_LEFT);
-
-        //l.setXEntrySpace(7);
-        //l.setYEntrySpace(5);
+        // disable legend
         pieChart.getLegend().setEnabled(false);
 
-        //animate
+        // animate
         pieChart.animateY(1500);
 
         // create pie data object
@@ -168,9 +137,6 @@ public class ScreenTimeFragment extends Fragment {
         pieChart.setRotationAngle(1);
         pieChart.setRotationEnabled(true);
 
-
-
-       // pieChart.setUsePercentValues(true);
         pieChart.setData(data);
         pieChart.invalidate();
     }
@@ -194,10 +160,6 @@ public class ScreenTimeFragment extends Fragment {
 
         List<UsageStats> queryUsageStats = mUsageStatsManager.queryUsageStats(intervalType, start, end);
 
-//        boolean checking = queryUsageStats.isEmpty();
-//
-//        Log.d("ScreenFrag2", checking + "");
-
         for (int i = 0; i < queryUsageStats.size(); i++) {
             CustomUsageStats customUsageStats = new CustomUsageStats();
             customUsageStats.usageStats = queryUsageStats.get(i);
@@ -206,7 +168,6 @@ public class ScreenTimeFragment extends Fragment {
             appData.setTotalTimeInForeground(customUsageStats.usageStats.getTotalTimeInForeground());
             appData.setAppPackage(customUsageStats.usageStats.getPackageName());
         }
-
         return queryUsageStats;
     }
 
@@ -224,11 +185,7 @@ public class ScreenTimeFragment extends Fragment {
 
         String title = (String) (applicationInformation != null ? pckManager.getApplicationLabel(applicationInformation) : "(unknown)");
         return title;
-
     }
-
-
-
 
 
     public static long getDurationBreakdown(long millis) {
@@ -242,10 +199,8 @@ public class ScreenTimeFragment extends Fragment {
         millis -= TimeUnit.MINUTES.toMillis(minutes);
         long seconds = TimeUnit.MILLISECONDS.toSeconds(millis);
 
-
         return(minutes);
     }
-
 
 }
 
